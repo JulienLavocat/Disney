@@ -11,7 +11,7 @@ async function listData() {
 
     getData((movies => {
         Object.entries(movies).forEach(entry => {
-            list.appendChild(createListElement(entry[1].title, `/watch/${entry[0]}`));
+            list.appendChild(createListElement(entry[1].title, `/${entry[1].file}`));
         });
     }));
 

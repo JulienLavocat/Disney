@@ -1,15 +1,15 @@
 const app = require("express")();
 const helmet = require("helmet");
-const basicAuth = require("express-basic-auth");
+const morgan = require("morgan");
+
+require("dotenv").config();
 
 app.use(helmet());
-// app.use(basicAuth({
-//     users: {
-//         "user": "disneyPassword"
-//     }
-// }));
+app.use(morgan('tiny'));
 
-app.use(require("express").static("public"));
+app.use(require("express").static("public", {
+    extensions: ['html', 'htm']
+}));
 
 app.use(require("./router"));
 
