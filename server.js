@@ -5,7 +5,7 @@ const morgan = require("morgan");
 require("dotenv").config();
 
 app.use(helmet());
-app.use(morgan('tiny'));
+app.use(morgan("short"));
 
 app.use(require("express").static("public", {
     extensions: ['html', 'htm']
