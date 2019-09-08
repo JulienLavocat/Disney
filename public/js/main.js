@@ -11,7 +11,7 @@ async function listData() {
 
     getData((movies => {
         Object.entries(movies).forEach(entry => {
-            list.appendChild(createListElement(entry[1].title, `/${entry[1].file}`));
+            list.appendChild(createListElement(entry[1].title, `http://movies.thebad.xyz/${entry[1].file}`));
         });
     }));
 
